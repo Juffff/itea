@@ -11,9 +11,9 @@ public class Controller {
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
-
-
     }
+
+    //Main user process
 
     public void processUser() throws IOException {
         view.printPromtMessage();
@@ -45,7 +45,7 @@ public class Controller {
         }
     }
 
-
+    //Check input method
     private int checkInput(BufferedReader reader) throws IOException {
         int result;
         try {

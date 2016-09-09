@@ -23,9 +23,13 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+
+        //Linking components
         Model model = new Model();
         View view = new View();
         Controller controller = new Controller(model,view);
+
+        //Start user process
         try {
             controller.processUser();
         } catch (IOException e) {
