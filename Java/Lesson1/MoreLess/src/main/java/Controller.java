@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class Controller {
@@ -17,14 +18,14 @@ public class Controller {
 
     public void processUser() throws IOException {
         view.printPromtMessage();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        InputStream inputStream = System.in;
 
         int  trySecret = -1;
         while (trySecret != model.getSecret()) {
             trySecret = -1;
 
             while (trySecret == -1) {
-                trySecret = checkInput(reader);
+                trySecret = checkInput(inputStream);
                 model.addVariant(trySecret);
             }
 
@@ -46,7 +47,8 @@ public class Controller {
     }
 
     //Check input method
-    private int checkInput(BufferedReader reader) throws IOException {
+    private int checkInput(InputStream inputStream) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         int result;
         try {
             result = Integer.parseInt(reader.readLine());
