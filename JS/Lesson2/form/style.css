@@ -1,0 +1,42 @@
+form{
+    width: 0;
+}
+.textInput{
+    outline: none;
+    float: left;
+    margin-top: 10px;
+    border-style: solid;
+    font-size: 24px;
+    padding: 6px;
+    border-width: 3px;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #ff0000;
+    box-shadow: -4px 5px 8px 0px rgba(42,42,42,.75);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.button{
+    width: 325px;
+    float: left;
+    outline: none;
+    float: left;
+    margin-top: 10px;
+    border-style: solid;
+    font-size: 24px;
+    padding: 6px;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: red;
+    color: #ffffff;
+    border-color: black;
+    box-shadow: -4px 5px 8px 0px rgba(42,42,42,.75);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.button:hover{
+    background-color: crimson;
+}
