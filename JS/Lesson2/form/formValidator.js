@@ -26,4 +26,8 @@ Email должен быть такого вида login (содержит в с�
     var pwdInput = document.getElementById("pwd");
     var phoneInput = document.getElementById("phone");
 
-    validateButton.addEventListener("click", console.log("test"), false);
+    function validate() {
+        console.log("tst");
+    }
+
+    validateButton.addEventListener("click", validate, false);
