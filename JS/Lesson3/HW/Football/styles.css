@@ -1,0 +1,23 @@
+
+body {
+    background-color: black;
+}
+
+.field {
+    background-image: url("field.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+
+}
+
+.ball {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-image: url("ball.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+
+}
