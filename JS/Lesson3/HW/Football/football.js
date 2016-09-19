@@ -17,8 +17,8 @@ function football() {
         var x = event.clientX;
         var y = event.clientY;
 
-        var startX = ball.offsetLeft;
-        var startY = ball.offsetTop;
+        var startX = ball.offsetLeft+30;
+        var startY = ball.offsetTop-30;
 
         if (x > field.offsetLeft + width - 30) {
             x = field.offsetLeft + width - 30;
@@ -39,19 +39,20 @@ function football() {
         }
 
         /*ball.style.left = x - 30 + "px";
-        ball.style.top = y - 30 + "px";*/
+         ball.style.top = y - 30 + "px";*/
 
-        var mover = setInterval(move(startX,startY,x,y),20);
-
-        function move(startX, startY, x, y) {
-            console.log(startX);
-            console.log(x);
-            if(startX>=x){clearInterval(mover);}
-            else {
-                startX+=1;
-                ball.style.left =startX - 30 + "px";
+        var mover = setInterval(function () {
+            startX+=20;
+            drawX(startX);
+            if(startX>=x){
+                clearInterval(mover);
             }
+        },20)
+
+        function drawX(sX) {
+            ball.style.left = sX - 30 + "px";
         }
+
 
 
     }
@@ -60,6 +61,8 @@ function football() {
 window.onload = football;
 
 /*
+
  var a = setInterval(function () {
  console.log(Date.now());
- },2000);*/
+ },2000);
+*/
