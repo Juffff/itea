@@ -6,63 +6,127 @@ function football() {
     var field = document.createElement("div");
     field.classList.add("field");
     field.style.cssText = ("width:varwidthpx; height:varheightpx;".replace("varwidth", width).replace("varheight", height));
-    document.body.addEventListener("click", "", false);
-    field.addEventListener("click", moveBall, false);
     var ball = document.createElement("div");
     ball.classList.add("ball");
     field.appendChild(ball);
     document.body.appendChild(field);
+    // field.addEventListener("click", getXY, false);
 
-    function moveBall() {
+
+
+
+
+
+
+    field.addEventListener("click", move, false);
+
+    function move() {
         var x = event.clientX;
         var y = event.clientY;
+        console.log(x);
+        console.log(y);
+        moveBall(ball, x,y, 20);
+    }
 
-        var startX = ball.offsetLeft+30;
-        var startY = ball.offsetTop-30;
 
-        if (x > field.offsetLeft + width - 30) {
-            x = field.offsetLeft + width - 30;
+    function moveBall(object, endX, endY, speed) {
+        var x = object.offsetLeft + 30;
+        var y = object.offsetTop;
+
+        if (endX > field.offsetLeft + width - 30) {
+            endX = field.offsetLeft + width - 30;
         }
 
-        if (x < field.offsetLeft + 30) {
-            x = field.offsetLeft + 30;
+        if (endX < field.offsetLeft + 30) {
+            endX = field.offsetLeft + 30;
         }
 
-
-        if (y > field.offsetTop + height - 30) {
-            y = field.offsetTop + height - 30;
+        if (endY > field.offsetTop + height - 30) {
+            endY = field.offsetTop + height - 30;
 
         }
 
-        if (y < field.offsetTop + 30) {
-            y = field.offsetTop + 30;
+        if (endY < field.offsetTop + 30) {
+            endY = field.offsetTop + 30;
         }
-
-        /*ball.style.left = x - 30 + "px";
-         ball.style.top = y - 30 + "px";*/
 
         var mover = setInterval(function () {
-            startX+=20;
-            drawX(startX);
-            if(startX>=x){
-                clearInterval(mover);
+                console.log("X = " + x + " Y = "+y);
+                console.log("endX = " + endX + " endY = "+ endY);
+
+
+                //right
+                if (x < endX) {
+
+                    x = x + speed;
+
+                    if (x > endX) {
+                        x = endX;
+                    }
+                    if (x == endX && y==endY) {
+                        clearInterval(mover)
+                    }
+
+                    drawX(x,y);
+                }
+
+                //left
+                if (x > endX) {
+
+                    x = x - speed;
+
+                    if (x < endX) {
+                        x = endX;
+                    }
+                    if (x == endX && y==endY) {
+                        clearInterval(mover)
+                    }
+
+                    drawX(x ,y);
+                }
+
+                //up
+                if (y > endY) {
+
+                    y = y - speed;
+
+                    if (y < endY) {
+                        y = endY;
+                    }
+                    if (x == endX && y==endY) {
+                        clearInterval(mover)
+                    }
+
+                    drawX(x ,y);
+                }
+
+                if (y < endY) {
+
+                    y = y + speed;
+
+                    if (y > endY) {
+                        y = endY;
+                    }
+                    if (x == endX && y==endY) {
+                        clearInterval(mover)
+                    }
+
+                    drawX(x ,y);
+                }
+
+
             }
-        },20)
 
-        function drawX(sX) {
-            ball.style.left = sX - 30 + "px";
+            , 20);
+
+        function drawX(x ,y) {
+            object.style.left = x - 30 + "px";
+            object.style.top = y-30  + "px";
         }
-
-
-
     }
+
+
+
 }
 
 window.onload = football;
-
-/*
-
- var a = setInterval(function () {
- console.log(Date.now());
- },2000);
-*/
