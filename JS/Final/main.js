@@ -41,7 +41,7 @@ function app() {
         }
 
         this.getAllUsers = function () {
-            return userArray;
+            return new Array(userArray);
         }
     }
 
