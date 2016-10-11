@@ -1,0 +1,93 @@
+body{
+    text-align: center;
+}
+
+.user {
+    float: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.userLi {
+    float: left;
+    width: 115px;
+    display: table-cell;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 20px;
+
+    padding-left: 2px;
+    color: white;
+    font-weight: 400;
+    margin-left: 2px;
+
+}
+
+.buttonLi{
+
+    float: left;
+    width: 50px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 20px;
+    padding-left: 2px;
+    margin-left: 2px;
+
+}
+
+.userName, .userMail, .userPhone, .userAddress, .userStreet, .userCity, .userRegion, .userIndex{
+    background-color: gray;
+}
+
+
+.buttonDelete{
+    background-color: yellow;
+    color: black;
+    text-align: center;
+}
+
+.buttonEdit{
+    background-color: green;
+    text-align: center;
+    color: white;
+}
+
+
+
+.modal {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid limegreen;
+    border-radius: 5px;
+}
+
+.editInput{
+    float: left;
+    width: 98%;
+}
+
+.setButton{
+    height: 17px;
+    border: 1px solid;
+    /* z-index: 0; */
+    float: left;
+    width: 100%;
+    border-radius: 3px;
+    background-color: green;
+    color: wheat;
+}
+
+.addButton{
+    height: 17px;
+    border: 1px solid;
+    /* z-index: 0; */
+    float: left;
+    width: 100%;
+    border-radius: 3px;
+    background-color: green;
+    color: wheat;
+}
